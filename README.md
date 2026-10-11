@@ -1,85 +1,43 @@
-# FairWrite (Server-Side)
+# Inkclusive API server
 
-FairWrite is a web-based text editor that provides grammar and gender-fair revisions. Built with FastAPI, it integrates with powerful NLP tools like `spaCy` and `language-tool-python` to enhance writing for clarity, accuracy, and inclusivity.
+This FastAPI service processes writing requests and stores the gender-fair term rules used by Inkclusive. The web client lives in [`../inkclusive-frontend/`](../inkclusive-frontend/README.md).
 
-## ✨ Features
+## What it does
 
-- **Grammar Check:** Detects and suggests corrections for grammatical errors.
-- **Gender-Fair Language:** Encourages gender-neutral language and avoids biased terms.
-- **Custom Preferred Pronoun:** Users can specify their preferred pronouns for personalized suggestions.
-- **Admin Gender Terms Control:** Admins can manage and customize gender term revisions (CRUD support).
+- `POST /grammar` - returns a LanguageTool revision and correction details.
+- `POST /gfl` - applies gender-fair language rules and preferred pronouns, then increments the request counter.
+- `/terms` - reads, creates, updates, and deletes replacement rules stored in `gendered_terms.csv`.
+- `/count` - reads or updates the counter stored in `count.csv`.
 
-## 🛠️ Tech Stack
+`main.py` defines the HTTP endpoints and a simple per-client rate limiter. `main_gfl.py` contains the text processing rules and uses spaCy's `en_core_web_sm` model. `csvCrud.py` reads and writes the term CSV; `schemas.py` defines request bodies; `count.py` manages the counter file.
 
-- **FastAPI:** A modern, high-performance web framework for building APIs with Python 3.8+ based on standard Python type hints. It enables rapid development and automatic interactive API documentation.
-- **Uvicorn:** A lightning-fast ASGI server implementation, used to serve FastAPI applications in production and development environments.
-- **LanguageTool:** An open-source grammar, style, and spell checker. Integrated via `language-tool-python`, it analyzes text for grammatical errors and suggests improvements.
-- **spaCy:** An advanced Natural Language Processing (NLP) library for Python. Used for tokenization, part-of-speech tagging, and other linguistic features to support gender-fair and inclusive language suggestions.
+## Local setup
 
-## 📦 Installation
+Use Python 3.10 or newer and Java 17 or newer for the local LanguageTool server (see the [`language_tool_python` requirements](https://pypi.org/project/language_tool_python/)), then install the dependencies and spaCy model:
 
-Follow these steps to set up the project:
-
-### 1. Install Python and Java
-
-Make sure you have **Python 3.8 or higher** installed, as this project relies on recent Python features. You can download the latest version from the [official Python website](https://www.python.org/downloads/).  
-To verify your Python installation, run:
-
-```bash
-python --version
-```
-
-Additionally, **Java JDK 21 or newer** is required for running LanguageTool, which handles grammar checking. Download the JDK from the [Oracle Java Downloads page](https://www.oracle.com/javatechnologies/downloads/), or use your system's package manager.  
-To confirm Java is installed, run:
-
-```bash
-java -version
-```
-
-### 2. Clone the Repository
-
-```bash
-git clone https://github.com/Fair-Write/Server-Side.git
-cd fairwrite
-```
-
-### 3. Create and Activate a Virtual Environment
-
-```bash
+```sh
 python -m venv .venv
-```
-
-- **On macOS/Linux:**
-     ```bash
-     source .venv/bin/activate
-     ```
-- **On Windows:**
-     ```bash
-     .venv\Scripts\activate
-     ```
-
-### 4. Install Dependencies
-
-```bash
+# macOS/Linux: source .venv/bin/activate
+# Windows PowerShell: .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-```
-
-### 5. Download spaCy Model
-
-```bash
 python -m spacy download en_core_web_sm
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-### 6. Run the Application
+The API is available at `http://localhost:8000`; FastAPI's interactive documentation is at `/docs`.
 
-```bash
-uvicorn main:app --port 80
+## Docker
+
+From this directory:
+
+```sh
+docker compose up --build
 ```
 
-The app will be available at [http://127.0.0.1:80/](http://127.0.0.1:80/).
+The Compose setup maps host port 8000 to port 80 in the container.
 
----
+## Important deployment note
 
-## 🚀 Frontend Integration
+The `/terms` create, update, and delete endpoints currently have no authentication. The frontend's admin password check does not protect these backend routes. Add server-side authorization and restrict network access before making the API available to untrusted users. CORS settings are not an authorization mechanism.
 
-For the official frontend interface, refer to the [FairWrite Client-Side](https://github.com/yourusername/fairwrite-client) repository.
+The term and count CSV files are the current storage layer. Back them up if their contents need to survive container replacement; the Compose bind mount keeps the backend directory available to the container.
