@@ -81,13 +81,14 @@ async def grammar_revision(body: GrammarBody):
 
     # Process each match to extract the necessary details
     for match in matches:
+        error_length = match.error_length
         corrections.append({
             "character_offset": match.offset,
-            "character_endset": match.offset + match.errorLength,
-            "original_text": text[match.offset:match.offset + match.errorLength],
+            "character_endset": match.offset + error_length,
+            "original_text": text[match.offset:match.offset + error_length],
             "message": match.message,
             "category": match.category,
-            "rule_id": match.ruleId,
+            "rule_id": match.rule_id,
             "replacements": match.replacements[:5]  # Only get the top 5 replacements
         })
 
