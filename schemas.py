@@ -16,10 +16,16 @@ class GFLBody(BaseModel):
 class GenderTermCreate(BaseModel):
     term: str = Field(..., example="chairman")
     options: List[str] = Field(..., example=["chairperson", "chair"])
+    category: str = "Other"
+    guidance: str = ""
+    examples: List[str] = []
 
 
 class GenderTermUpdate(BaseModel):
     options: List[str] = Field(..., example=["chairperson", "moderator"])
+    category: str | None = None
+    guidance: str | None = None
+    examples: List[str] | None = None
 
 
 

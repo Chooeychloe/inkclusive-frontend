@@ -7,7 +7,7 @@ from math import ceil
 import language_tool_python
 from main_gfl import load_gfl
 from csvCrud import GenderTermManager
-from schemas import GrammarBody, GFLBody, GenderTermCreate, GenderTermUpdate
+from schemas import GrammarBody, GFLBody, GenderTermCreate, GenderTermUpdate, GenderTermBulkCreate
 from count import read_counter, increment_counter, update_counter 
 
 # Load models and tools
@@ -87,6 +87,7 @@ async def grammar_revision(body: GrammarBody):
             "character_endset": match.offset + error_length,
             "original_text": text[match.offset:match.offset + error_length],
             "message": match.message,
+            "rationale": match.message,
             "category": match.category,
             "rule_id": match.rule_id,
             "replacements": match.replacements[:5]  # Only get the top 5 replacements
@@ -127,6 +128,10 @@ async def gender_fair_revision(body: GFLBody):
 def list_all_terms():
         return genderTermManager.get_all_term()
 
+@app.get("/terms/records")
+def list_term_records():
+        return genderTermManager.get_all_records()
+
 @app.get("/terms/{term}")
 def get_term(term: str):
         result = genderTermManager.find_term(term)
@@ -137,7 +142,7 @@ def get_term(term: str):
 @app.put("/terms/{term}")
 def update_term(term: str, update_data: GenderTermUpdate):
     try:
-        genderTermManager.update(term, update_data.options)
+        genderTermManager.update(term, update_data.options, update_data.category, update_data.guidance, update_data.examples)
         return {"message": f"Term '{term}' updated"}
     except KeyError as e:
         raise HTTPException(status_code=404, detail=str(e))
@@ -152,10 +157,23 @@ def delete_term(term: str):
 @app.post("/terms", status_code=status.HTTP_201_CREATED)
 def create_term(term_data: GenderTermCreate):
     try:
-        genderTermManager.create(term_data.term, term_data.options)
+        genderTermManager.create(term_data.term, term_data.options, term_data.category, term_data.guidance, term_data.examples)
         return {"message": f"Term '{term_data.term}' created"}
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
+
+@app.post("/terms/bulk", status_code=status.HTTP_201_CREATED)
+def create_terms_bulk(payload: GenderTermBulkCreate):
+    created = []
+    try:
+        for item in payload.terms:
+            genderTermManager.create(item.term, item.options, item.category, item.guidance, item.examples)
+            created.append(item.term)
+    except (ValueError, KeyError) as e:
+        for term in created:
+            genderTermManager.delete(term)
+        raise HTTPException(status_code=400, detail=str(e))
+    return {"created": len(created)}
 
 @app.get("/count")
 def get_count_request():

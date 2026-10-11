@@ -1,6 +1,7 @@
 import spacy
 import csv
 import re
+import json
 from collections import OrderedDict
 from typing import Dict, List, Tuple, Optional
 
@@ -35,6 +36,12 @@ nlp = spacy.load('en_core_web_sm')
 class GenderFairLanguage:
     def __init__(self, terms_csv: str = 'gendered_terms.csv'):
         self.gendered_terms = self._load_and_prioritize_terms(terms_csv)
+        metadata_path = re.sub(r'\.csv$', '_metadata.json', terms_csv)
+        try:
+            with open(metadata_path, encoding='utf-8') as metadata_file:
+                self.term_metadata = {key.lower(): value for key, value in json.load(metadata_file).items()}
+        except (FileNotFoundError, json.JSONDecodeError):
+            self.term_metadata = {}
         
     def _load_and_prioritize_terms(self, csv_filename: str) -> OrderedDict:
         gendered_terms = OrderedDict()
@@ -129,6 +136,15 @@ class GenderFairLanguage:
         corrections.extend(self._find_pronoun_replacements(text, doc, name_pronoun_map))
         corrections.extend(self._find_possessive_constructions(text, doc)) 
         corrections = self._filter_overlapping_corrections(corrections)
+
+        for correction in corrections:
+            original = correction.get('original_text', '')
+            term_info = self.term_metadata.get(original.lower(), {})
+            correction['category'] = term_info.get('category', 'Gender-fair language')
+            correction['rule_id'] = 'GFL_TERM_LIBRARY' if term_info else 'GFL_LANGUAGE_PATTERN'
+            correction['message'] = term_info.get('guidance') or 'This wording may unnecessarily imply gender; consider a neutral alternative when gender is not relevant.'
+            correction['rationale'] = correction['message']
+            correction['examples'] = term_info.get('examples', [])
 
         revised_text = text
         for correction in sorted(corrections, key=lambda x: -x['character_offset']):
