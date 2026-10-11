@@ -2,6 +2,7 @@ import spacy
 import csv
 import re
 import json
+import os
 from collections import OrderedDict
 from typing import Dict, List, Tuple, Optional
 
@@ -35,6 +36,7 @@ nlp = spacy.load('en_core_web_sm')
 
 class GenderFairLanguage:
     def __init__(self, terms_csv: str = 'gendered_terms.csv'):
+        self.terms_csv = terms_csv
         self.gendered_terms = self._load_and_prioritize_terms(terms_csv)
         metadata_path = re.sub(r'\.csv$', '_metadata.json', terms_csv)
         try:
@@ -42,6 +44,24 @@ class GenderFairLanguage:
                 self.term_metadata = {key.lower(): value for key, value in json.load(metadata_file).items()}
         except (FileNotFoundError, json.JSONDecodeError):
             self.term_metadata = {}
+        self._source_signature = self._get_source_signature()
+
+    def _get_source_signature(self):
+        metadata_path = re.sub(r'\.csv$', '_metadata.json', self.terms_csv)
+        return tuple(os.path.getmtime(path) if os.path.exists(path) else None for path in (self.terms_csv, metadata_path))
+
+    def refresh_terms_if_changed(self):
+        signature = self._get_source_signature()
+        if signature == self._source_signature:
+            return
+        self.gendered_terms = self._load_and_prioritize_terms(self.terms_csv)
+        metadata_path = re.sub(r'\.csv$', '_metadata.json', self.terms_csv)
+        try:
+            with open(metadata_path, encoding='utf-8') as metadata_file:
+                self.term_metadata = {key.lower(): value for key, value in json.load(metadata_file).items()}
+        except (FileNotFoundError, json.JSONDecodeError):
+            self.term_metadata = {}
+        self._source_signature = signature
         
     def _load_and_prioritize_terms(self, csv_filename: str) -> OrderedDict:
         gendered_terms = OrderedDict()
