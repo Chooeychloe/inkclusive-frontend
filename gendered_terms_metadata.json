@@ -1,0 +1,922 @@
+{
+  "waiter": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "waitress": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "actress": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "policemen": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "policeman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "policewoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "policewomen": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "fireman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "firemen": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "firewoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "chairman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "chairwoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "businessman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "mankind": {
+    "category": "Collective language",
+    "guidance": "Use “humankind,” “humanity,” or “people” for all people. “Peoplekind” is uncommon; choose natural wording for the sentence.",
+    "examples": []
+  },
+  "businesswoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "spokesman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "salesman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "postman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "landlord": {
+    "category": "Occupation & role",
+    "guidance": "“Property owner” is not always equivalent to “landlord”; the landlord may be a company, tenant, or agent. Use a neutral term only if it accurately describes the legal or practical role.",
+    "examples": []
+  },
+  "landlady": {
+    "category": "Occupation & role",
+    "guidance": "“Property owner” is not always equivalent to “landlady”; the landlord may be a company, tenant, or agent. Use a neutral term only if it accurately describes the legal or practical role.",
+    "examples": []
+  },
+  "stewardess": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "steward": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "mailman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "mailwoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "freshman": {
+    "category": "Education",
+    "guidance": "Use a year-based student term when the school system and year level are clear. Do not assume that year labels map directly across education systems.",
+    "examples": []
+  },
+  "upperclassman": {
+    "category": "Education",
+    "guidance": "Use a year-based student term when the school system and year level are clear. Do not assume that year labels map directly across education systems.",
+    "examples": []
+  },
+  "middleman": {
+    "category": "Occupation & role",
+    "guidance": "Use “intermediary” for someone connecting parties and “agent” when someone acts on another's behalf. These alternatives are not interchangeable in every context.",
+    "examples": []
+  },
+  "workman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "workwoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "cameraman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "camerawoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "repairman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "repairmen": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "repairwoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "handyman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "handywoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "craftsman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "craftswoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "foreman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "forewoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "congressman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "congresswoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "ombudsman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "fisherman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "fisherwoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "weatherman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "weathergirl": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "weatherwoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "weatherperson": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "spokeswoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "spokesgirl": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "man-made": {
+    "category": "Collective language",
+    "guidance": "Use “manufactured” for something made by people and “artificial” for something not natural. Choose according to the sentence; the meanings differ.",
+    "examples": []
+  },
+  "man-kind": {
+    "category": "Collective language",
+    "guidance": "Use “humankind,” “humanity,” or “people” for all people. “Peoplekind” is uncommon; choose natural wording for the sentence.",
+    "examples": []
+  },
+  "manmade": {
+    "category": "Collective language",
+    "guidance": "“Manufactured” describes something made by people; it may not fit an artificial material or process in every context.",
+    "examples": []
+  },
+  "mansize": {
+    "category": "Collective language",
+    "guidance": "Use a neutral expression only when it preserves the intended meaning. Some alternatives may be broader or narrower, so check the sentence before replacing the wording.",
+    "examples": []
+  },
+  "manpower": {
+    "category": "Collective language",
+    "guidance": "Use a neutral expression only when it preserves the intended meaning. Some alternatives may be broader or narrower, so check the sentence before replacing the wording.",
+    "examples": []
+  },
+  "man-sized": {
+    "category": "Collective language",
+    "guidance": "“Big” is broader and loses the comparison to a typical adult human size. Prefer a precise measurement or “human-sized” when that is the intended meaning.",
+    "examples": []
+  },
+  "janitor": {
+    "category": "Occupation & role",
+    "guidance": "“Cleaner” may omit maintenance or facilities responsibilities. Use a neutral job title that matches the person's actual work.",
+    "examples": []
+  },
+  "janitress": {
+    "category": "Occupation & role",
+    "guidance": "“Cleaner” may omit maintenance or facilities responsibilities. Use a neutral job title that matches the person's actual work.",
+    "examples": []
+  },
+  "seaman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "seawoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "sportsmen": {
+    "category": "Collective language",
+    "guidance": "Use “athletes” for participants of any gender. Keep any group description accurate rather than broadening it unintentionally.",
+    "examples": []
+  },
+  "layman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "maid": {
+    "category": "Occupation & role",
+    "guidance": "“Helper” is vague and can obscure paid domestic work. Use “housekeeper,” “domestic worker,” or the person's actual role when accurate.",
+    "examples": []
+  },
+  "brotherhood": {
+    "category": "Collective language",
+    "guidance": "Use a neutral expression only when it preserves the intended meaning. Some alternatives may be broader or narrower, so check the sentence before replacing the wording.",
+    "examples": []
+  },
+  "statesman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "statesmanship": {
+    "category": "Collective language",
+    "guidance": "Use a neutral expression only when it preserves the intended meaning. Some alternatives may be broader or narrower, so check the sentence before replacing the wording.",
+    "examples": []
+  },
+  "stockman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "pressmen": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "pressman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "manhood": {
+    "category": "Collective language",
+    "guidance": "“Adulthood” describes a life stage; “manhood” may refer to gender identity or a cultural role. Replace it only when adulthood is the intended meaning.",
+    "examples": []
+  },
+  "lady policeman": {
+    "category": "Occupation & role",
+    "guidance": "Use “police officer” when gender is not relevant; do not infer the officer's gender from the original wording.",
+    "examples": []
+  },
+  "lady police": {
+    "category": "Occupation & role",
+    "guidance": "Use “police officer” when gender is not relevant; do not infer the officer's gender from the original wording.",
+    "examples": []
+  },
+  "lady police officer": {
+    "category": "Occupation & role",
+    "guidance": "Use “police officer” when gender is not relevant; do not infer the officer's gender from the original wording.",
+    "examples": []
+  },
+  "lady doctor": {
+    "category": "Occupation & role",
+    "guidance": "Use “doctor” or the person's professional title; avoid marking a profession by gender unless gender is relevant.",
+    "examples": []
+  },
+  "whore": {
+    "category": "Potentially stigmatizing wording",
+    "guidance": "This is a slur in many contexts. Follow the person's own language. “Sex worker” applies to consensual work; wording that implies coercion should be used only when coercion is established.",
+    "examples": []
+  },
+  "man-hours": {
+    "category": "Collective language",
+    "guidance": "Use a neutral expression only when it preserves the intended meaning. Some alternatives may be broader or narrower, so check the sentence before replacing the wording.",
+    "examples": []
+  },
+  "middle-man": {
+    "category": "Occupation & role",
+    "guidance": "Use “intermediary” for someone connecting parties and “agent” when someone acts on another's behalf. These alternatives are not interchangeable in every context.",
+    "examples": []
+  },
+  "lineman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "lumbermen": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "watchmen": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "watchman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "newsman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "newsmen": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "comedienne": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "poetess": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "emcee": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "mother-in-law": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "father-in-law": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "brother-in-law": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "sister-in-law": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "son-in-law": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "daughter-in-law": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "manservant": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "menservants": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "womanservant": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "womanservants": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "boyfriend": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "girlfriend": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "boyfriends": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "girlfriends": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "husband": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "wife": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "wives": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "husbands": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "mothering": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "fathering": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "mothered": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "fathered": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "ladies": {
+    "category": "Gendered reference",
+    "guidance": "Use neutral wording only when gender is not relevant and the alternative preserves number, age, and meaning. Do not remove a person's self-identified gender or other relevant detail by default.",
+    "examples": []
+  },
+  "ladies'": {
+    "category": "Collective language",
+    "guidance": "Use a neutral expression only when it preserves the intended meaning. Some alternatives may be broader or narrower, so check the sentence before replacing the wording.",
+    "examples": []
+  },
+  "ladys' room": {
+    "category": "Public facilities",
+    "guidance": "Use a neutral facility name such as “restroom” when it accurately describes the space and suits the context. Preserve legally or operationally meaningful distinctions where required.",
+    "examples": []
+  },
+  "ladies' room": {
+    "category": "Public facilities",
+    "guidance": "Use a neutral facility name such as “restroom” when it accurately describes the space and suits the context. Preserve legally or operationally meaningful distinctions where required.",
+    "examples": []
+  },
+  "ladies room": {
+    "category": "Public facilities",
+    "guidance": "Use a neutral facility name such as “restroom” when it accurately describes the space and suits the context. Preserve legally or operationally meaningful distinctions where required.",
+    "examples": []
+  },
+  "gentlemen's": {
+    "category": "Collective language",
+    "guidance": "Use a neutral expression only when it preserves the intended meaning. Some alternatives may be broader or narrower, so check the sentence before replacing the wording.",
+    "examples": []
+  },
+  "gentlemen's room": {
+    "category": "Public facilities",
+    "guidance": "Use a neutral facility name such as “restroom” when it accurately describes the space and suits the context. Preserve legally or operationally meaningful distinctions where required.",
+    "examples": []
+  },
+  "gentlemen room": {
+    "category": "Public facilities",
+    "guidance": "Use a neutral facility name such as “restroom” when it accurately describes the space and suits the context. Preserve legally or operationally meaningful distinctions where required.",
+    "examples": []
+  },
+  "gentlemen": {
+    "category": "Gendered reference",
+    "guidance": "Use neutral wording only when gender is not relevant and the alternative preserves number, age, and meaning. Do not remove a person's self-identified gender or other relevant detail by default.",
+    "examples": []
+  },
+  "businessmans": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "businesswomen": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "businessmen": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "businessperson": {
+    "category": "Occupation & role",
+    "guidance": "This is already gender-neutral. Keep it when it fits; the listed replacement may change grammatical number.",
+    "examples": []
+  },
+  "businesspersons": {
+    "category": "Occupation & role",
+    "guidance": "This is already gender-neutral. Match singular or plural form to the sentence rather than replacing it automatically.",
+    "examples": []
+  },
+  "stepfather": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "stepmother": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "stepbrother": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "stepsister": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "stepson": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "stepdaughter": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "baron": {
+    "category": "Titles & status",
+    "guidance": "Choose a neutral title when gender is not relevant and the alternative preserves the person's role or rank. Retain a person's stated title and distinctions required by history, law, or context.",
+    "examples": []
+  },
+  "baroness": {
+    "category": "Titles & status",
+    "guidance": "Choose a neutral title when gender is not relevant and the alternative preserves the person's role or rank. Retain a person's stated title and distinctions required by history, law, or context.",
+    "examples": []
+  },
+  "emperor": {
+    "category": "Titles & status",
+    "guidance": "Choose a neutral title when gender is not relevant and the alternative preserves the person's role or rank. Retain a person's stated title and distinctions required by history, law, or context.",
+    "examples": []
+  },
+  "empress": {
+    "category": "Titles & status",
+    "guidance": "Choose a neutral title when gender is not relevant and the alternative preserves the person's role or rank. Retain a person's stated title and distinctions required by history, law, or context.",
+    "examples": []
+  },
+  "king": {
+    "category": "Titles & status",
+    "guidance": "Choose a neutral title when gender is not relevant and the alternative preserves the person's role or rank. Retain a person's stated title and distinctions required by history, law, or context.",
+    "examples": []
+  },
+  "queen": {
+    "category": "Titles & status",
+    "guidance": "Choose a neutral title when gender is not relevant and the alternative preserves the person's role or rank. Retain a person's stated title and distinctions required by history, law, or context.",
+    "examples": []
+  },
+  "manhole": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "manning": {
+    "category": "Collective language",
+    "guidance": "Use “staffing” for assigning people to a role and “operating” for running equipment or a process. They are not interchangeable.",
+    "examples": []
+  },
+  "manhunt": {
+    "category": "Collective language",
+    "guidance": "Use “search” or “search operation” when referring to a search for a person. Name what is being sought when known; avoid obscuring the target.",
+    "examples": []
+  },
+  "showman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "showwoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "godfather": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "godmother": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "deliveryman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "deliverywoman": {
+    "category": "Occupation & role",
+    "guidance": "When gender is not relevant, consider a role-neutral alternative. Check that it describes the same work or authority: some options are broader, narrower, or context-specific. Keep an official or personally preferred title when needed.",
+    "examples": []
+  },
+  "gentlewoman": {
+    "category": "Gendered reference",
+    "guidance": "Use neutral wording only when gender is not relevant and the alternative preserves number, age, and meaning. Do not remove a person's self-identified gender or other relevant detail by default.",
+    "examples": []
+  },
+  "ex-boyfriend": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "ex-girlfriend": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "alumnus": {
+    "category": "Titles & status",
+    "guidance": "Use “graduate” for one person or “alumni” for a group. Match grammatical number to the sentence.",
+    "examples": []
+  },
+  "alumna": {
+    "category": "Titles & status",
+    "guidance": "Use “graduate” for one person or “alumni” for a group. Match grammatical number to the sentence.",
+    "examples": []
+  },
+  "sophomore": {
+    "category": "Education",
+    "guidance": "Use a year-based student term when the school system and year level are clear. Do not assume that year labels map directly across education systems.",
+    "examples": []
+  },
+  "junior": {
+    "category": "Education",
+    "guidance": "Use a year-based student term when the school system and year level are clear. Do not assume that year labels map directly across education systems.",
+    "examples": []
+  },
+  "senior": {
+    "category": "Education",
+    "guidance": "Use a year-based student term when the school system and year level are clear. Do not assume that year labels map directly across education systems.",
+    "examples": []
+  },
+  "family man": {
+    "category": "Family & relationships",
+    "guidance": "“Family-oriented person” is broad and can imply a value judgment. Describe family roles only when relevant and supported by context.",
+    "examples": []
+  },
+  "mother": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "father": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "brother": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "sister": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "men": {
+    "category": "Gendered reference",
+    "guidance": "Use neutral wording only when gender is not relevant and the alternative preserves number, age, and meaning. Do not remove a person's self-identified gender or other relevant detail by default.",
+    "examples": []
+  },
+  "man": {
+    "category": "Gendered reference",
+    "guidance": "Use neutral wording only when gender is not relevant and the alternative preserves number, age, and meaning. Do not remove a person's self-identified gender or other relevant detail by default.",
+    "examples": []
+  },
+  "women": {
+    "category": "Gendered reference",
+    "guidance": "Use neutral wording only when gender is not relevant and the alternative preserves number, age, and meaning. Do not remove a person's self-identified gender or other relevant detail by default.",
+    "examples": []
+  },
+  "woman": {
+    "category": "Gendered reference",
+    "guidance": "Use neutral wording only when gender is not relevant and the alternative preserves number, age, and meaning. Do not remove a person's self-identified gender or other relevant detail by default.",
+    "examples": []
+  },
+  "girl": {
+    "category": "Gendered reference",
+    "guidance": "Use neutral wording only when gender is not relevant and the alternative preserves number, age, and meaning. Do not remove a person's self-identified gender or other relevant detail by default.",
+    "examples": []
+  },
+  "boy": {
+    "category": "Gendered reference",
+    "guidance": "Use neutral wording only when gender is not relevant and the alternative preserves number, age, and meaning. Do not remove a person's self-identified gender or other relevant detail by default.",
+    "examples": []
+  },
+  "son": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "sons": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "daughter": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "daughters": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "brothers": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "boys": {
+    "category": "Gendered reference",
+    "guidance": "Use neutral wording only when gender is not relevant and the alternative preserves number, age, and meaning. Do not remove a person's self-identified gender or other relevant detail by default.",
+    "examples": []
+  },
+  "girls": {
+    "category": "Gendered reference",
+    "guidance": "Use neutral wording only when gender is not relevant and the alternative preserves number, age, and meaning. Do not remove a person's self-identified gender or other relevant detail by default.",
+    "examples": []
+  },
+  "mothers": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "fathers": {
+    "category": "Family & relationships",
+    "guidance": "Use a neutral alternative when gender or the exact relationship is not relevant. Keep specific family, marital, or social details when they matter or reflect the person's own wording.",
+    "examples": []
+  },
+  "male": {
+    "category": "Gendered reference",
+    "guidance": "Use neutral wording only when gender is not relevant and the alternative preserves number, age, and meaning. Do not remove a person's self-identified gender or other relevant detail by default.",
+    "examples": []
+  },
+  "female": {
+    "category": "Gendered reference",
+    "guidance": "Use neutral wording only when gender is not relevant and the alternative preserves number, age, and meaning. Do not remove a person's self-identified gender or other relevant detail by default.",
+    "examples": []
+  },
+  "lady": {
+    "category": "Gendered reference",
+    "guidance": "Use neutral wording only when gender is not relevant and the alternative preserves number, age, and meaning. Do not remove a person's self-identified gender or other relevant detail by default.",
+    "examples": []
+  },
+  "gay": {
+    "category": "Sexual orientation",
+    "guidance": "“Gay” is a valid identity term for many people. Do not replace it with generic “people” or an umbrella label when referring to someone's orientation; follow the person's own wording and mention orientation only when relevant.",
+    "examples": []
+  },
+  "gays": {
+    "category": "Sexual orientation",
+    "guidance": "Avoid using “gays” as a noun for people. If orientation is relevant, use “gay people” or the group's preferred wording; generic “people” can erase relevant identity.",
+    "examples": []
+  },
+  "bisexual": {
+    "category": "Sexual orientation",
+    "guidance": "“Bisexual” is a valid identity term, not a synonym for all LGBTQIA+ people. Use it only when relevant and do not substitute generic “person.”",
+    "examples": []
+  },
+  "bisexuals": {
+    "category": "Sexual orientation",
+    "guidance": "Avoid using “bisexuals” as a noun for people. If relevant, use “bisexual people”; do not replace the specific identity with an umbrella label or generic “people.”",
+    "examples": []
+  },
+  "lesbian": {
+    "category": "Sexual orientation",
+    "guidance": "“Lesbian” is a valid identity term for many people. Use it only when relevant and follow the person's own wording; it is not interchangeable with every LGBTQIA+ identity or with “person.”",
+    "examples": []
+  },
+  "lesbians": {
+    "category": "Sexual orientation",
+    "guidance": "Avoid using “lesbians” as a noun for people. If orientation is relevant, use “lesbian people” or the group's preferred wording.",
+    "examples": []
+  },
+  "homosexual": {
+    "category": "Sexual orientation",
+    "guidance": "This can sound clinical or dated when used for a person. Prefer the person's own identity term when relevant; do not replace it with generic “people” by default.",
+    "examples": []
+  },
+  "homosexuals": {
+    "category": "Sexual orientation",
+    "guidance": "This can sound clinical or dated when used for people. Avoid using it as a noun; use the group's own identity term when relevant rather than generic “people.”",
+    "examples": []
+  },
+  "same-sex": {
+    "category": "Sexual orientation",
+    "guidance": "“Same-sex” describes a relationship or pairing, not an individual identity. A replacement such as “same-gender” is suitable only when that is what the context means.",
+    "examples": []
+  }
+}

@@ -4,16 +4,22 @@ from math import ceil
 from time import time
 
 import language_tool_python
-from fastapi import FastAPI, HTTPException, Request, status
+from dotenv import load_dotenv
+from fastapi import Depends, FastAPI, HTTPException, Request, status
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.responses import JSONResponse
 
 from count import increment_counter, read_counter
+from admin_auth import TOKEN_LIFETIME_SECONDS, change_admin_password, create_admin_token, has_admin_password, verify_admin_password, verify_admin_token
 from csvCrud import GenderTerm, GenderTermManager
 from main_gfl import load_gfl
 from schemas import (
 	CountResponse,
+	AdminLoginBody,
+	AdminLoginResponse,
+	AdminPasswordChange,
 	GenderFairResponse,
 	GenderTermBulkCreate,
 	GenderTermBulkDelete,
@@ -27,6 +33,7 @@ from schemas import (
 	GrammarResponse,
 )
 
+load_dotenv()
 
 API_PREFIX = "/api/v1"
 COUNTER_FILE = "count.csv"
@@ -40,6 +47,11 @@ gflEngine = load_gfl(TERMS_CSV)
 grammar_lock = threading.Lock()
 terms_lock = threading.RLock()
 rate_limit_store: dict[str, list[float]] = {}
+admin_login_attempts: dict[str, list[float]] = {}
+admin_login_lock = threading.Lock()
+ADMIN_LOGIN_LIMIT = 5
+ADMIN_LOGIN_WINDOW = 15 * 60
+bearer_scheme = HTTPBearer(auto_error=False)
 
 app = FastAPI(
 	title="Inkclusive API",
@@ -86,6 +98,56 @@ class AnalysisRateLimitMiddleware(BaseHTTPMiddleware):
 
 
 app.add_middleware(AnalysisRateLimitMiddleware)
+
+
+def require_admin(credentials: HTTPAuthorizationCredentials | None = Depends(bearer_scheme)):
+	if credentials is None or not verify_admin_token(credentials.credentials):
+		raise HTTPException(
+			status_code=status.HTTP_401_UNAUTHORIZED,
+			detail="Admin authentication is required or has expired.",
+			headers={"WWW-Authenticate": "Bearer"},
+		)
+
+
+@app.post(f"{API_PREFIX}/admin/login", response_model=AdminLoginResponse, tags=["admin"])
+def admin_login(payload: AdminLoginBody, request: Request):
+	if not has_admin_password() or not os.getenv("ADMIN_TOKEN_SECRET"):
+		raise HTTPException(status_code=503, detail="Admin authentication is not configured on this server.")
+
+	client_ip = request.client.host if request.client else "unknown"
+	current_time = time()
+	with admin_login_lock:
+		attempts = [stamp for stamp in admin_login_attempts.get(client_ip, []) if current_time - stamp < ADMIN_LOGIN_WINDOW]
+		if len(attempts) >= ADMIN_LOGIN_LIMIT:
+			retry_after = ceil(ADMIN_LOGIN_WINDOW - (current_time - attempts[0]))
+			admin_login_attempts[client_ip] = attempts
+			raise HTTPException(
+				status_code=429,
+				detail="Too many admin login attempts. Try again later.",
+				headers={"Retry-After": str(retry_after)},
+			)
+		if not verify_admin_password(payload.password):
+			attempts.append(current_time)
+			admin_login_attempts[client_ip] = attempts
+			raise HTTPException(status_code=401, detail="The admin password is incorrect.")
+		admin_login_attempts.pop(client_ip, None)
+
+	try:
+		token = create_admin_token()
+	except RuntimeError as error:
+		raise HTTPException(status_code=503, detail="Admin authentication is not configured correctly.") from error
+	return {"access_token": token, "token_type": "bearer", "expires_in": TOKEN_LIFETIME_SECONDS}
+
+
+@app.post(f"{API_PREFIX}/admin/change-password", tags=["admin"])
+def admin_change_password(payload: AdminPasswordChange, _admin=Depends(require_admin)):
+	try:
+		change_admin_password(payload.current_password, payload.new_password)
+	except ValueError as error:
+		raise HTTPException(status_code=400, detail=str(error)) from error
+	except OSError as error:
+		raise HTTPException(status_code=503, detail="Could not save the new admin password.") from error
+	return {"success": True, "message": "Password changed. Sign in again with the new password."}
 
 
 @app.get("/", tags=["system"])
@@ -142,25 +204,25 @@ def gender_fair_revision(body: GFLBody):
 	return {"count": read_counter(COUNTER_FILE), **result}
 
 
-@app.get("/terms", include_in_schema=False)
+@app.get("/terms", include_in_schema=False, dependencies=[Depends(require_admin)])
 def list_all_terms_legacy():
 	with terms_lock:
 		return genderTermManager.get_all_term()
 
 
-@app.get(f"{API_PREFIX}/terms", response_model=list[GenderTermRecord], tags=["terms"])
+@app.get(f"{API_PREFIX}/terms", response_model=list[GenderTermRecord], tags=["terms"], dependencies=[Depends(require_admin)])
 def list_all_terms():
 	with terms_lock:
 		return genderTermManager.get_all_records()
 
 
-@app.get("/terms/records", include_in_schema=False)
+@app.get("/terms/records", include_in_schema=False, dependencies=[Depends(require_admin)])
 def list_term_records_legacy():
 	with terms_lock:
 		return genderTermManager.get_all_records()
 
 
-@app.get("/terms/{term}", include_in_schema=False)
+@app.get("/terms/{term}", include_in_schema=False, dependencies=[Depends(require_admin)])
 def get_term_legacy(term: str):
 	with terms_lock:
 		result = genderTermManager.find_term(term)
@@ -169,7 +231,7 @@ def get_term_legacy(term: str):
 	return result
 
 
-@app.get(f"{API_PREFIX}/terms/{{term}}", response_model=GenderTermRecord, tags=["terms"])
+@app.get(f"{API_PREFIX}/terms/{{term}}", response_model=GenderTermRecord, tags=["terms"], dependencies=[Depends(require_admin)])
 def get_term(term: str):
 	with terms_lock:
 		result = genderTermManager.find_record(term)
@@ -187,13 +249,13 @@ def _create_term(term_data: GenderTermCreate) -> dict:
 		raise HTTPException(status_code=409, detail=str(error)) from error
 
 
-@app.post("/terms", status_code=status.HTTP_201_CREATED, include_in_schema=False)
+@app.post("/terms", status_code=status.HTTP_201_CREATED, include_in_schema=False, dependencies=[Depends(require_admin)])
 def create_term_legacy(term_data: GenderTermCreate):
 	_create_term(term_data)
 	return {"message": f"Term '{term_data.term}' created"}
 
 
-@app.post(f"{API_PREFIX}/terms", status_code=status.HTTP_201_CREATED, response_model=GenderTermRecord, tags=["terms"])
+@app.post(f"{API_PREFIX}/terms", status_code=status.HTTP_201_CREATED, response_model=GenderTermRecord, tags=["terms"], dependencies=[Depends(require_admin)])
 def create_term(term_data: GenderTermCreate):
 	return _create_term(term_data)
 
@@ -216,18 +278,18 @@ def _update_term(term: str, update_data: GenderTermUpdate) -> dict:
 		raise HTTPException(status_code=404, detail="Term not found") from error
 
 
-@app.put("/terms/{term}", include_in_schema=False)
+@app.put("/terms/{term}", include_in_schema=False, dependencies=[Depends(require_admin)])
 def update_term_legacy(term: str, update_data: GenderTermUpdate):
 	_update_term(term, update_data)
 	return {"message": f"Term '{term}' updated"}
 
 
-@app.put(f"{API_PREFIX}/terms/{{term}}", response_model=GenderTermRecord, tags=["terms"], include_in_schema=False)
+@app.put(f"{API_PREFIX}/terms/{{term}}", response_model=GenderTermRecord, tags=["terms"], include_in_schema=False, dependencies=[Depends(require_admin)])
 def update_term(term: str, update_data: GenderTermUpdate):
 	return _update_term(term, update_data)
 
 
-@app.patch(f"{API_PREFIX}/terms/{{term}}", response_model=GenderTermRecord, tags=["terms"])
+@app.patch(f"{API_PREFIX}/terms/{{term}}", response_model=GenderTermRecord, tags=["terms"], dependencies=[Depends(require_admin)])
 def patch_term(term: str, update_data: GenderTermUpdate):
 	return _update_term(term, update_data)
 
@@ -240,12 +302,12 @@ def _delete_term(term: str):
 		raise HTTPException(status_code=404, detail="Term not found") from error
 
 
-@app.delete("/terms/{term}", status_code=status.HTTP_204_NO_CONTENT, include_in_schema=False)
+@app.delete("/terms/{term}", status_code=status.HTTP_204_NO_CONTENT, include_in_schema=False, dependencies=[Depends(require_admin)])
 def delete_term_legacy(term: str):
 	_delete_term(term)
 
 
-@app.delete(f"{API_PREFIX}/terms/{{term}}", status_code=status.HTTP_204_NO_CONTENT, tags=["terms"])
+@app.delete(f"{API_PREFIX}/terms/{{term}}", status_code=status.HTTP_204_NO_CONTENT, tags=["terms"], dependencies=[Depends(require_admin)])
 def delete_term(term: str):
 	_delete_term(term)
 
@@ -260,17 +322,17 @@ def _create_terms_bulk(payload: GenderTermBulkCreate) -> dict:
 	return {"created": len(entries)}
 
 
-@app.post("/terms/bulk", status_code=status.HTTP_201_CREATED, include_in_schema=False)
+@app.post("/terms/bulk", status_code=status.HTTP_201_CREATED, include_in_schema=False, dependencies=[Depends(require_admin)])
 def create_terms_bulk_legacy(payload: GenderTermBulkCreate):
 	return _create_terms_bulk(payload)
 
 
-@app.post(f"{API_PREFIX}/terms/bulk", status_code=status.HTTP_201_CREATED, response_model=GenderTermBulkResult, tags=["terms"])
+@app.post(f"{API_PREFIX}/terms/bulk", status_code=status.HTTP_201_CREATED, response_model=GenderTermBulkResult, tags=["terms"], dependencies=[Depends(require_admin)])
 def create_terms_bulk(payload: GenderTermBulkCreate):
 	return _create_terms_bulk(payload)
 
 
-@app.delete(f"{API_PREFIX}/terms", response_model=GenderTermBulkDeleteResult, tags=["terms"])
+@app.delete(f"{API_PREFIX}/terms", response_model=GenderTermBulkDeleteResult, tags=["terms"], dependencies=[Depends(require_admin)])
 def delete_terms_bulk(payload: GenderTermBulkDelete):
 	try:
 		with terms_lock:

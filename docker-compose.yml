@@ -2,6 +2,9 @@ services:
   app:
     image: inkclusive-backend
     build: .
+    environment:
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set ADMIN_PASSWORD in the backend .env file}
+      ADMIN_TOKEN_SECRET: ${ADMIN_TOKEN_SECRET:?Set ADMIN_TOKEN_SECRET in the backend .env file}
     ports:
       - "8000:80"
     volumes:

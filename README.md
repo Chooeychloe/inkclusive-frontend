@@ -12,6 +12,8 @@ New clients should use the versioned `/api/v1` routes. Interactive docs are avai
 | `POST` | `/api/v1/grammar` | Grammar suggestions and corrected text. |
 | `POST` | `/api/v1/gfl` | Gender-fair suggestions, taking an optional `pronoun_map`. |
 | `GET` | `/api/v1/count` | Read the analysis counter. |
+| `POST` | `/api/v1/admin/login` | Verify the admin password and issue an expiring bearer token. |
+| `POST` | `/api/v1/admin/change-password` | Change the password for the authenticated admin. |
 | `GET` | `/api/v1/terms` | List full term records. |
 | `GET` | `/api/v1/terms/{term}` | Read a term, case-insensitively. |
 | `POST` | `/api/v1/terms` | Create a term; returns the created record. |
@@ -48,32 +50,64 @@ The term CSV and metadata JSON must be backed up together. The frontend's local 
 
 ## Local setup
 
-Use Python 3.10 or newer and Java 17 or newer for the local LanguageTool server (see the [`language_tool_python` requirements](https://pypi.org/project/language_tool_python/)), then install the dependencies and spaCy model:
+Use Python 3.10 or newer and Java 17 or newer for the local LanguageTool server (see the [`language_tool_python` requirements](https://pypi.org/project/language_tool_python/)). From the project root, open PowerShell and run these commands the first time you set up the backend:
 
-```sh
+```powershell
+cd inkclusive-backend
 python -m venv .venv
-# macOS/Linux: source .venv/bin/activate
-# Windows PowerShell: .venv\Scripts\Activate.ps1
+.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 python -m spacy download en_core_web_sm
+```
+
+Create a private `.env` file in `inkclusive-backend` with these values. The backend loads this file when it starts, and `.env` is excluded from Git:
+
+```text
+ADMIN_PASSWORD=choose-a-long-unique-password
+ADMIN_TOKEN_SECRET=paste-a-generated-secret-here
+# Optional: store password changes in persistent storage (defaults to ./admin_credentials.json)
+ADMIN_CREDENTIALS_FILE=./admin_credentials.json
+```
+
+Generate a secret once with `python -c "import secrets; print(secrets.token_urlsafe(48))"` and paste the output as `ADMIN_TOKEN_SECRET`. Keep reusing the same secret across restarts; changing it immediately expires existing admin sessions.
+
+`ADMIN_PASSWORD` is the initial admin password. After signing in, use **Change password** in the admin header to save a new password as a salted PBKDF2 hash in `ADMIN_CREDENTIALS_FILE`. The file takes precedence over `ADMIN_PASSWORD` for later sign-ins, and changing the password expires existing admin sessions. The default file is in the backend working directory; configure this path to a persistent volume when deploying to a host with temporary container storage, or the changed password will be lost when that storage is replaced. Keep the credentials file private and back it up securely.
+
+You only need to create the virtual environment, install dependencies, and download the spaCy model once per environment. To run the backend on later occasions, open PowerShell in the `inkclusive-backend` folder and run:
+
+```powershell
+.venv\Scripts\Activate.ps1
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
+
+Keep that terminal open while using the app. Activate the environment again in each new terminal. Repeat the setup commands only if you delete or recreate `.venv`, or when project dependencies change.
+
+On macOS or Linux, activate the environment with `source .venv/bin/activate` instead.
 
 The API is available at `http://localhost:8000`; FastAPI's interactive documentation is at `/docs`.
 
 ## Docker
 
-From this directory:
+From this directory, create the `.env` file described above, then run:
 
 ```sh
 docker compose up --build
 ```
 
-The Compose setup maps host port 8000 to port 80 in the container.
+Compose passes these values to the container and maps host port 8000 to port 80. Keep the `.env` file private and out of version control.
 
 ## Important deployment note
 
-The term create, update, and delete endpoints do not have authentication. The frontend's admin password check does not protect these backend routes. Add server-side authorization and restrict network access before making the API available to untrusted users. CORS settings are not an authorization mechanism.
+All term-library endpoints, including legacy aliases, require a valid admin bearer token. The admin login is rate-limited to five failed attempts per client IP every 15 minutes. Tokens expire after eight hours. The frontend keeps the token in an HttpOnly, same-site cookie and proxies admin requests to the backend, so browser scripts cannot read the token.
+
+Configure these backend environment variables before enabling admin management:
+
+```text
+ADMIN_PASSWORD=<a long, unique admin password>
+ADMIN_TOKEN_SECRET=<a random secret of at least 32 bytes>
+```
+
+Generate a token secret locally with `python -c "import secrets; print(secrets.token_urlsafe(48))"`. Set the same backend URL in the frontend's `PUBLIC_BACKEND_URL`. In production, serve the frontend and backend over HTTPS and set `CORS_ORIGINS` to trusted frontend origins. CORS is not a replacement for authentication.
 
 Set `CORS_ORIGINS` to a comma-separated list of trusted web origins in production. It defaults to `*` for local development and does not enable credentialed requests. CORS allows the `ngrok-skip-browser-warning` header used by the frontend for tunneled API requests. The in-memory analysis rate limit is per worker process; use a shared rate limiter when deploying multiple workers.
 

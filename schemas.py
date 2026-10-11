@@ -152,3 +152,18 @@ class GenderTermBulkDeleteResult(APIModel):
 
 class CountResponse(APIModel):
     count: int = Field(ge=0)
+
+
+class AdminLoginBody(APIModel):
+    password: str = Field(min_length=1, max_length=1024)
+
+
+class AdminPasswordChange(APIModel):
+    current_password: str = Field(min_length=1, max_length=1024)
+    new_password: str = Field(min_length=12, max_length=1024)
+
+
+class AdminLoginResponse(APIModel):
+    access_token: str
+    token_type: Literal["bearer"] = "bearer"
+    expires_in: int = Field(gt=0)
